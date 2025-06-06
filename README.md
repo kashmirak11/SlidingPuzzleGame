@@ -40,42 +40,45 @@ To run the game locally:
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/your-username/sliding-puzzle-game.git
-Navigate to the project directory:
+   git clone https://github.com/kashmirak11/SlidingPuzzleGame.git
+````
 
-bash
-Copy
-Edit
-cd sliding-puzzle-game
-Open the index.html file in your browser to start playing!
+2. **Navigate to the project directory:**
 
-📦 Deployment
-The game can be deployed to platforms like GitHub Pages, Netlify, or Vercel by simply uploading the HTML, CSS, and JavaScript files.
+   ```bash
+   cd sliding-puzzle-game
+   ```
+3. **Open the `index.html` file in your browser** to start playing!
 
-🎉 Demo
-👉 Play the game live here! ([update this with your live link](https://kpuzzlegameapp.tiiny.site/))
+## 📦 Deployment
+
+The game can be deployed to platforms like **GitHub Pages**, **Netlify**, or **Vercel** by simply uploading the HTML, CSS, and JavaScript files.
+
+## 🎉 Demo
+
+👉 **[Play the game live here!](#)** (https://kpuzzlegameapp.tiiny.site/)
 
 
-Level Selection Screen	Easy Mode	Win Celebration
+
+| Level Selection Screen                        | Easy Mode                               | Win Celebration                                     |
+| --------------------------------------------- | --------------------------------------- | --------------------------------------------------- |
+| ![Level Screen](screenshots/level-screen.png) | ![Easy Mode](screenshots/easy-mode.png) | ![Win Celebration](screenshots/win-celebration.png) |
 
 
 
-🙌 Contributing
+## 🙌 Contributing
+
 Contributions are welcome! Please fork this repository and submit a pull request to improve the game, fix bugs, or add new features.
 
-📜 License
-This project is licensed under the MIT License.
+## 📜 License
 
-🎉 Enjoy sliding and puzzling! 🎉
+This project is licensed under the **MIT License**.
 
+---
 
+🎉 **Enjoy sliding and puzzling!** 🎉
 
+```
 
-
-
-
-
-
-
-
+---
 
