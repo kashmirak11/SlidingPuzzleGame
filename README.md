@@ -10,13 +10,13 @@
 
 ## 🏆 Features
 
-✅ Multiple difficulty levels
-✅ Limited attempts to solve the puzzle
-✅ Attractive, colorful design with engaging animations
-✅ Celebration effects when you win
-✅ Game over and score screens
-✅ Play again and start new game options
-✅ Fully mobile-responsive design
+- ✅ Multiple difficulty levels
+- ✅ Limited attempts to solve the puzzle
+- ✅ Attractive, colorful design with engaging animations
+- ✅ Celebration effects when you win
+- ✅ Game over and score screens
+- ✅ Play again and start new game options
+- ✅ Fully mobile-responsive design
 
 ---
 
