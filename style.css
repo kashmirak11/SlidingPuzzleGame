@@ -1,0 +1,324 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #333;
+}
+
+.heading-highlight {
+  background: linear-gradient(45deg, #fcb69f, #ffecd2);
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #333;
+  font-weight: bold;
+}
+/* Existing styles remain */
+
+const levelScreen = document.getElementById('level-screen');
+const gameContainer = document.getElementById('game-container');
+const puzzleGrid = document.getElementById('puzzle-grid');
+const attemptsLeftEl = document.getElementById('attempts-left');
+const resultScreen = document.getElementById('result-screen');
+const resultMessage = document.getElementById('result-message');
+const finalScore = document.getElementById('final-score');
+const celebration = document.getElementById('celebration');
+const shuffleBtn = document.getElementById('shuffle-btn');
+const newGameBtn = document.getElementById('new-game-btn');
+const playAgainBtn = document.getElementById('play-again-btn');
+
+let tiles = [];
+let emptyIndex = 8;
+let attemptsLeft = 20;
+
+const levelAttempts = {
+  easy: 30,
+  medium: 20,
+  hard: 10
+};
+
+document.querySelectorAll('.level-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const level = btn.dataset.level;
+    attemptsLeft = levelAttempts[level];
+    attemptsLeftEl.textContent = attemptsLeft;
+    applyLevelStyles(level);
+    startGame();
+    levelScreen.style.display = 'none';
+    gameContainer.style.display = 'block';
+  });
+});
+
+function applyLevelStyles(level) {
+  // Example of visually styling the game container for different levels
+  if (level === 'easy') {
+    gameContainer.style.background = '#e0f7fa'; // light blue for easy
+  } else if (level === 'medium') {
+    gameContainer.style.background = '#fff9c4'; // light yellow for medium
+  } else if (level === 'hard') {
+    gameContainer.style.background = '#ffccbc'; // light red for hard
+  }
+}
+
+function startGame() {
+  tiles = [1, 2, 3, 4, 5, 6, 7, 8, ""];
+  shuffleTiles();
+  renderTiles();
+}
+
+function shuffleTiles() {
+  for (let i = tiles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+  emptyIndex = tiles.indexOf("");
+}
+
+function renderTiles() {
+  puzzleGrid.innerHTML = '';
+  tiles.forEach((tile, idx) => {
+    const div = document.createElement('div');
+    div.classList.add('puzzle-tile');
+    if (tile !== "") div.textContent = tile;
+    div.addEventListener('click', () => moveTile(idx));
+    puzzleGrid.appendChild(div);
+  });
+}
+
+function moveTile(idx) {
+  const validMoves = [
+    idx - 1, idx + 1,
+    idx - 3, idx + 3
+  ].filter(i => i >= 0 && i < 9 && (i % 3 !== 3 || idx % 3 !== 0));
+
+  if (validMoves.includes(emptyIndex)) {
+    [tiles[idx], tiles[emptyIndex]] = [tiles[emptyIndex], tiles[idx]];
+    emptyIndex = idx;
+    renderTiles();
+    attemptsLeft--;
+    attemptsLeftEl.textContent = attemptsLeft;
+    checkWinOrLoss();
+  }
+}
+
+function checkWinOrLoss() {
+  if (tiles.join('') === '12345678') {
+    showResult('🎉 You Win!', attemptsLeft);
+  } else if (attemptsLeft <= 0) {
+    showResult('💔 You Lose!', 0);
+  }
+}
+
+function showResult(message, score) {
+  resultMessage.textContent = message;
+  finalScore.textContent = `⭐ Your Score: ${score}`;
+  gameContainer.style.display = 'none';
+  resultScreen.style.display = 'flex';
+  triggerCelebration(message === '🎉 You Win!');
+}
+
+function triggerCelebration(isWin) {
+  celebration.innerHTML = '';
+  if (isWin) {
+    for (let i = 0; i < 30; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = `${Math.random() * 100}%`;
+      confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      celebration.appendChild(confetti);
+    }
+  }
+}
+
+shuffleBtn.addEventListener('click', () => {
+  shuffleTiles();
+  renderTiles();
+});
+
+newGameBtn.addEventListener('click', () => location.reload());
+playAgainBtn.addEventListener('click', () => location.reload());
+
+
+
+.status {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+  font-weight: 600;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.puzzle-tile {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  background-image: linear-gradient(145deg, #e0e0e0, #f9f9f9);
+}
+
+.puzzle-tile:empty {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+.puzzle-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #fcb69f, #ffecd2);
+  transform: scale(1.05);
+}
+
+.result-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+#result-message {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.scorecard {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.celebration {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffcc00;
+  opacity: 0.8;
+  animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+  from { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  to { transform: translateY(400px) rotate(360deg); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .puzzle-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+
+  .puzzle-tile {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+  /* Existing styles remain */
+
+/* Level selection screen styles */
+.choose-level {
+  margin: 20px 0;
+  font-size: 22px;
+  color: #444;
+}
+
+.level-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.level-btn {
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.level-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #a6c1ee, #fbc2eb);
+}
+
+}

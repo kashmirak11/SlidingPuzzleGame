@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sliding Puzzle Game</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Level Selection Screen -->
+<div class="container" id="level-screen">
+  <h1>🧩 <span class="heading-highlight">Sliding Puzzle Game</span>  🧩</h1>
+  <h2 class="choose-level">Choose Your Level</h2>
+  <div class="level-buttons">
+    <button class="level-btn" data-level="easy">🌟 Easy</button>
+    <button class="level-btn" data-level="medium">⚡ Medium</button>
+    <button class="level-btn" data-level="hard">🔥 Hard</button>
+  </div>
+</div>
+
+<!-- Game Screen -->
+<div class="container" id="game-container" style="display:none;">
+  <h1>🧩 <span class="heading-highlight">Sliding Puzzle Game</span> 🧩</h1>
+  <div class="status">
+    <p>🎯 Attempts Left: <span id="attempts-left">20</span></p>
+  </div>
+  <div class="puzzle-grid" id="puzzle-grid"></div>
+  <div class="buttons">
+    <button id="shuffle-btn">🔀 Shuffle</button>
+    <button id="new-game-btn">🔄 Start New Game</button>
+  </div>
+</div>
+
+<!-- Result Screen -->
+<div class="result-screen" id="result-screen" style="display:none;">
+  <div class="celebration" id="celebration"></div>
+  <h2 id="result-message"></h2>
+  <div class="scorecard">
+    <p id="final-score"></p>
+  </div>
+  <button id="play-again-btn">▶ Play Again</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
