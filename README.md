@@ -49,10 +49,6 @@ The game can be deployed to platforms like **GitHub Pages**, **Netlify**, or **V
 
 
 
-| Level Selection Screen                        | Easy Mode                               | Win Celebration                                     |
-| --------------------------------------------- | --------------------------------------- | --------------------------------------------------- |
-| ![Level Screen](screenshots/level-screen.png) | ![Easy Mode](screenshots/easy-mode.png) | ![Win Celebration](screenshots/win-celebration.png) |
-
 To run the game locally:
 
 1. **Clone this repository:**
@@ -79,8 +75,4 @@ This project is licensed under the **MIT License**.
 ---
 
 🎉 **Enjoy sliding and puzzling!** 🎉
-
-```
-
----
 
