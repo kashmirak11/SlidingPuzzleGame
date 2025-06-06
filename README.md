@@ -1,15 +1,24 @@
-
+---
 # Sliding Puzzle Game
 
-Welcome to the **Sliding Puzzle Game**, a classic 3x3 sliding puzzle built with HTML, CSS, and JavaScript. This project features different difficulty levels, animations, a scoring system, and a celebration effect when you win!
+🎮 Sliding Puzzle Game is a fun and addictive 3x3 tile puzzle game built for web and Android. Rearrange the shuffled tiles to complete the puzzle in as few moves as possible!
 
-## 🧩 Features
+✨ Choose from three difficulty levels (Easy, Medium, Hard) and test your puzzle-solving skills. Enjoy celebratory animations when you win, and track your attempts to keep challenging yourself!
+Got it! Here’s a **complete README** you can upload on GitHub for your project, integrating the information about the APK file:
 
-- **Dynamic Level Selection:** Choose between **Easy**, **Medium**, and **Hard** modes, each with different attempt limits.
-- **Attractive UI:** The game container is styled differently for each difficulty level, providing a visually engaging experience.
-- **Confetti Celebration:** Celebrate your win with a colorful confetti animation.
-- **Score Tracking:** Displays remaining attempts as your final score.
-- **Responsive Design:** Play on any device with a clean and adaptive layout.
+---
+
+## 🏆 Features
+
+✅ Multiple difficulty levels
+✅ Limited attempts to solve the puzzle
+✅ Attractive, colorful design with engaging animations
+✅ Celebration effects when you win
+✅ Game over and score screens
+✅ Play again and start new game options
+✅ Fully mobile-responsive design
+
+---
 
 ## 🎮 How to Play
 
@@ -47,8 +56,20 @@ The game can be deployed to platforms like **GitHub Pages**, **Netlify**, or **V
 
 👉 **[Play the game live here!](#)** (https://kpuzzlegameapp.tiiny.site/)
 
+## 📱 Android Installation
 
+You can also play this game on your Android device by installing the APK file:
 
+**How to install the APK:**
+
+1. Download the `app-release.apk` file from the repository.
+2. Transfer the APK file to your Android device.
+3. Open the file and install the app (you may need to allow installs from unknown sources in your device settings).
+4. Launch the game and start playing!
+
+---
+
+## 🚀 Getting Started (Web Version)
 To run the game locally:
 
 1. **Clone this repository:**
