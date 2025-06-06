@@ -42,15 +42,18 @@ To run the game locally:
    ```bash
    git clone https://github.com/kashmirak11/SlidingPuzzleGame.git
 ````
+<br>
 
 2. **Navigate to the project directory:**
 
    ```bash
    cd sliding-puzzle-game
    ```
+<br>
+
 3. **Open the `index.html` file in your browser** to start playing!
 
-## 📦 Deployment
+##  📦 Deployment
 
 The game can be deployed to platforms like **GitHub Pages**, **Netlify**, or **Vercel** by simply uploading the HTML, CSS, and JavaScript files.
 
