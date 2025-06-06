@@ -36,22 +36,8 @@ Welcome to the **Sliding Puzzle Game**, a classic 3x3 sliding puzzle built with 
 
 ## 💻 Getting Started
 
-To run the game locally:
 
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/kashmirak11/SlidingPuzzleGame.git
-````
-<br>
-
-2. **Navigate to the project directory:**
-
-   ```bash
-   cd sliding-puzzle-game
-   ```
-<br>
-
-3. **Open the `index.html` file in your browser** to start playing!
+**Open the `index.html` file in your browser** to start playing!
 
 ##  📦 Deployment
 
@@ -67,6 +53,19 @@ The game can be deployed to platforms like **GitHub Pages**, **Netlify**, or **V
 | --------------------------------------------- | --------------------------------------- | --------------------------------------------------- |
 | ![Level Screen](screenshots/level-screen.png) | ![Easy Mode](screenshots/easy-mode.png) | ![Win Celebration](screenshots/win-celebration.png) |
 
+To run the game locally:
+
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/kashmirak11/SlidingPuzzleGame.git
+   ````
+
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd sliding-puzzle-game
+   ```
 
 
 ## 🙌 Contributing
