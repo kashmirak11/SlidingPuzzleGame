@@ -4,7 +4,7 @@
 🎮 Sliding Puzzle Game is a fun and addictive 3x3 tile puzzle game built for web and Android. Rearrange the shuffled tiles to complete the puzzle in as few moves as possible!
 
 ✨ Choose from three difficulty levels (Easy, Medium, Hard) and test your puzzle-solving skills. Enjoy celebratory animations when you win, and track your attempts to keep challenging yourself!
-Got it! Here’s a **complete README** you can upload on GitHub for your project, integrating the information about the APK file:
+
 
 ---
 
